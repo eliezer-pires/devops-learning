@@ -1,0 +1,23 @@
+Vagrant.configure("2") do |config|
+    # Define a box base como Ubuntu 18.04
+    config.vm.box = "ubuntu/jammy64"
+
+    # Configura a rede para a VM no modo Bridge
+    config.vm.network "public_network"
+
+    # Configurações da VM: memória e CPUs
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "2048"
+        vb.cpus = 2
+    end
+
+    # Provisionamento da VM: Instala Docker, Git, Minikube e outras ferramentas
+    config.vm.provision "shell", inline: <<-SHELL
+        sudo apt-get update
+        sudo apt-get install -y docker.io git curl
+        sudo usermod -aG docker vagrant
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+        sudo apt-get install -y kubectl
+    SHELL
+end
