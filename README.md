@@ -1,45 +1,23 @@
 # Repositório de Estudos de DevOps
 
-Neste repositório irei colocar meus labs, meus exercícios de cursos de vagrant, ansible, terraform, docker, kubernetes e etc.
+Este repositório contém meus laboratórios e exercícios de estudos em tecnologias como Vagrant, Ansible, Terraform, Docker, Kubernetes, entre outras ferramentas DevOps.
 
 ## Conteúdo do Repositório
 
 ### Curso de Vagrant
-
-    Ainda estou estudando a documentação oficial do Vagrant para melhorar os meus arquivos Vagrantfile para os próximos estudos.
-
-1. **Tenho meu primeiro arquivo Vagrantfile**
-    - Provisiona uma VM Ubuntu
-    - Faz redirecionamento de porta do serviço http
-    - Executa comandos a partir de um arquivo shell script
-
-2. **Script em Shell Script**
-    - Realiza a atualização e o upgrade de todos os pacotes do sistema.
-    - Instala e reinicia o serviço NGINX
-
-3. **Site Teste**
-    - Utilizo uma API do Correios Brasileiro para testes do redirecionamento de porta do http.
+- Concluí o conteúdo teórico e prático das aulas.
+- Ainda preciso realizar os laboratórios propostos.
+- Estou aprofundando meu conhecimento na documentação oficial para aprimorar os arquivos `Vagrantfile` em futuros estudos.
 
 ### Curso de Ansible
+- Atualmente em andamento, estudando o conteúdo e realizando os exercícios propostos.
 
-Ainda estou estudando este curso...
+## Próximos Passos
+- [x] Executar o Vagrant para testar o provisionamento.
+- [x] Revisar e otimizar o arquivo `Vagrantfile`.
+- [ ] Desenvolver um script utilizando PowerShell.
+- [ ] Continuar avançando no curso de Ansible.
 
-1. **Provisionamento de VMs**
-    - Provisiona uma VM com o CentOs 9 Stream, outra com o Debian 11 e outra com o Windows 10.
-    - Define o endereçamento IP.
-    - Define os hostnames das VMs.
-    - Executa os Scripts.
+---
 
-2. **Scripts executados no provisionamento**
-    - Realiza a atualização e o upgrade de todos os pacotes do sistema.
-    - Faz a Instalação do Ansible
-
-
-Sigo os Estudos...
-
-## Próximos passos
-
-    - Rodar o Vagrant para testar o provisionamento
-    - Revisar e melhorar o Vagrantfile
-    - Criar o script em power shell 
-    - Continuar aulas do curso.
+Sigo comprometido com os estudos e a evolução no aprendizado de ferramentas DevOps!
