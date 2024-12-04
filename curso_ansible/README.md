@@ -24,6 +24,18 @@ Este repositório documenta práticas e aprendizados do curso de Ansible, com o 
 
 - **`config.vm.provider`**: Inicialmente considerei opcional configurar o provider, já que utilizo apenas VirtualBox. Contudo, para garantir compatibilidade em qualquer ambiente e definir recursos de memória e CPU, incluí essa configuração no Vagrantfile.
 
+
+## Melhorias
+
+- Melhorei o recurso de memória da VM Thanos.
+- Alterei a instalação do ansible pois estava incompleta.
+
+## Próximos Passos
+
+  - [] Configurar o arquivo ansible.cfg.
+  - [] Configurar o inventory.
+  - [] Testar o ansible com comandos ad-hoc.
+
 ---
 
 Este README será atualizado conforme o progresso no curso e novos aprendizados.
