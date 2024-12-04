@@ -10,4 +10,5 @@ dnf clean all
 echo "Atualização Concluída!"
 echo "Instalando o Ansible..."
 dnf install ansible
+dnf install ansible-collection-community-general
 echo "Instalação Concluída!"

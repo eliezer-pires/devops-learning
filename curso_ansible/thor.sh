@@ -1,12 +1,18 @@
 #!/bin/bash
 
 echo "Atualizando o Sistema..."
-apt update -y
+sudo apt update -y
 echo "Fazendo upgrade dos pacotes..."
-apt upgrade -y
+sudo apt upgrade -y
 echo "Fazendo Limpeza dos pacotes antigos..."
-apt autoremove -y
+sudo apt autoremove -y
 echo "Atualização Concluída!"
 echo "Instalando o Ansible..."
-apt-get -y install ansible
+sudo apt install pipx -y
+pipx ensurepath
+pipx ensurpath --global
+pipx install --include-deps ansible
+echo "Atualizando o Ansible..."
+pipx upgrade --include-injected ansible
+pipx inject --include-apps ansible argcomplete
 echo "Instalação Concluída!"
