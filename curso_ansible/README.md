@@ -4,7 +4,7 @@ Este repositório documenta práticas e aprendizados do curso de Ansible, com o 
 
 ## Conteúdo do Projeto
 
-1. **Provisionamento de VMs**
+### 1. **Provisionamento de VMs**
    - Configura três máquinas virtuais:
      - **CentOS 9 Stream**
      - **Debian 11**
@@ -12,41 +12,56 @@ Este repositório documenta práticas e aprendizados do curso de Ansible, com o 
    - Define endereços IP e hostnames para as VMs.
    - Executa scripts personalizados durante o provisionamento.
 
-2. **Scripts Executados**
+### 2. **Scripts Executados**
    - Atualizam e fazem upgrade de todos os pacotes do sistema.
    - Instalam o Ansible nas VMs compatíveis.
   
-3. **Ansible.cfg**
+### 3. **Arquivo de Configuração (`ansible.cfg`)**
+O arquivo `ansible.cfg` é o principal arquivo de configuração do Ansible e pode estar em diferentes locais:
+1. Diretório padrão: `/etc/ansible/`.
+2. Arquivo na pasta corrente do projeto.
+3. Arquivo no diretório do usuário: `/home/usuário/.ansible.cfg`.
 
-  Este arquivo é o de configuração principal do Ansible e nele possue diversos parâmetro importantes.
-  A pasta padrão deste arquivo é /etc/ansible/ porém não necessariamente precisam estar nesta pasta, entretanto para fazer o Ansible ver os arquivos tem-se que mudar alguns aspectos como:
-  
-  1° Variáveis de ambiente.
-  2° Arquivo ansible.cfg na pasta corrente.
-  3° /home/usuário/.ansible.cfg
+#### Principais Parâmetros
+- `[defaults]`: Indica um grupo de configurações.
+- `become`: Habilita a escalada de privilégios.
+- `host_key_checking = False`: Desativa a verificação de troca de chaves SSH.
+- `nocows = 1`: Desabilita o mascote "vaquinha" ao executar comandos.
 
-  ### Alguns Detalhes do Ansible.cfg
+> **Dica de Boas Práticas**: Sempre crie uma cópia de backup antes de alterar o arquivo `ansible.cfg`.
 
-  [defaults] = Entre colchetes é GRUPOS
-  become = Escalação de privilégios
-  host_key_checking = False -> Para não ter troca de Chaves
-  nocows = 1 -> Desabilita a Vaquinha.
+### 4. **Comandos Ad-hoc**
+Comandos Ad-hoc são úteis para execução direta de tarefas no Ansible. Alguns exemplos executados:
+- **Teste de conectividade:**
+  ```bash
+  ansible -i hosts all -u teste -k -m ping
+  ```
+- **Instalação de pacote**
+    ```bash
+    ansible -i hosts capitao-america -u teste -k -m apt -a "name=vim state=latest"
+    ```
+#### Solução de Problemas
+Durante os testes com comandos Ad-hoc, enfrentei problemas relacionados à configuração do SSH. As soluções aplicadas foram:
 
-  **Dicas Boas Práticas: Sempre que for alterar criar algum coisa, criar cópia do arquivo.
+1. **Ajuste Temporário no SSH**:
+   - Para permitir acesso por senha, mesmo que não seja recomendado em ambientes de produção, alterei as seguintes opções no arquivo de configuração do SSH (`/etc/ssh/sshd_config`):
+     ```plaintext
+     PermitRootLogin yes
+     PasswordAuthentication yes
+     ```
+   - Após as alterações, reiniciei o serviço SSH:
+     ```bash
+     systemctl restart sshd
+     ```
 
-4. **Comandos Ad-hoc**
-  Realizei alguns comandos ad-hoc, como:
-    - ansible -i hosts all -u teste -k -m ping
-    - ansible -i hosts capitao-america -u teste -k -m apt -a "name=vim state=latest"
+### 5. Configurando SSH Keys
+Para configurar um acesso remoto seguro sem senha, utilizando chaves SSH, segui os passos abaixo:
 
-  Foi necessário realizar uma configuração devido a alguns erros que apresentou.
-    - o sshd não estava configurado para permitir acesso com senha, mesmo não sendo recomendado para ambiente de produção, ativei para uso acadêmico. Foi alterado o PermitLoginRoot e o PasswordAuthentication.
-
-5. **Configurando SSH Keys**
-  Para configurar o acesso remoto seguro sem senha, apenas trocando chaves ssh, precisamos gerar a chave. Para isso acessamos o servidor capitao-america e executamos o seguinte comando
-
-    ssh-keygen -t rsa -b 2048
-
+1. **Gerar a Chave SSH no Servidor**:
+   No servidor `capitao-america`, utilizei o comando para gerar uma chave SSH:
+   ```bash
+   ssh-keygen -t rsa -b 2048
+   
   O caminho da chave criada é por padrão a home do usuário logado no momento que no meu caso foi: /root/.ssh/id_rsa
 
   O próximo passo é passar a chave criada a outros servidores que queremos poder acessar remotamente. Faremos da seguinte forma:
