@@ -54,22 +54,32 @@ Durante os testes com comandos Ad-hoc, enfrentei problemas relacionados à confi
      systemctl restart sshd
      ```
 
-### 5. Configurando SSH Keys
+### 5. **Configurando SSH Keys**
 Para configurar um acesso remoto seguro sem senha, utilizando chaves SSH, segui os passos abaixo:
 
 1. **Gerar a Chave SSH no Servidor**:
    No servidor `capitao-america`, utilizei o comando para gerar uma chave SSH:
    ```bash
    ssh-keygen -t rsa -b 2048
+   ```
    
   O caminho da chave criada é por padrão a home do usuário logado no momento que no meu caso foi: /root/.ssh/id_rsa
 
   O próximo passo é passar a chave criada a outros servidores que queremos poder acessar remotamente. Faremos da seguinte forma:
-
+  
+  ``` bash
     ssh-copy-id -i /root/.ssh/id_rsa root@192.168.100.102
+  ```
 
   Após isso é importante desativarmos as configurações de acesso com senha que liberamos no passo anterior.
 
+### 6. **Organizando o Inventory File em Grupos e Subgrupos**
+
+  No arquivo hosts foi criado os grupos:
+
+    [web] e [db] para os servidores 192.168.100.101 e 192.168.100.102 respectivamente.
+
+    Após isso criamos um subgrupo [filial_01:children] e renomeamos os grupos para web_f01 e db_f01 e colocamos dentro do subgrupo.
 
 ## Problemas no Primeiro Commit
 
@@ -87,8 +97,8 @@ Para configurar um acesso remoto seguro sem senha, utilizando chaves SSH, segui 
 
 ## Próximos Passos
 
-  - [ ] Configurar o arquivo ansible.cfg.
-  - [ ] Configurar o inventory.
+  - [x] Configurar o arquivo ansible.cfg.
+  - [x] Configurar o inventory.
   - [ ] Testar o ansible com comandos ad-hoc.
 
 ---
