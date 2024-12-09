@@ -81,6 +81,16 @@ Para configurar um acesso remoto seguro sem senha, utilizando chaves SSH, segui 
 
     Após isso criamos um subgrupo [filial_01:children] e renomeamos os grupos para web_f01 e db_f01 e colocamos dentro do subgrupo.
 
+### 7. **Criando Variáveis no Inventory - Hosts**
+
+  No aquivo hosts utilizamos algumas variáveis para estabelecer alguns parametros padronizados, simplificando assim os comandos ad-hoc.
+
+    - ansible_hosts
+    - ansible_user
+    - ansible_port
+
+  Desta forma, os comandos ad-hoc utilizados para esse servidor não precisará enviar parametro como  -k e outros.
+  
 ## Problemas no Primeiro Commit
 
 - **Erros de Sintaxe no `vagrant up`**: Identifiquei e corrigi problemas após estudar a documentação oficial.
