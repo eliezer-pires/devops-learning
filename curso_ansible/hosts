@@ -1,9 +1,13 @@
 [web_f01]
-capitao-america ansible_host=192.168.100.101 ansible_user=ansible ansible_password=ansible ansible_port=22
+thor                ansible_host=192.168.100.102 
 
 [db_f01]
-192.168.100.102
+capitao-america     ansible_host=192.168.100.101
 
 [filial_01:children]
 web_f01
 db_f01
+
+[filial_01:vars]
+    ansible_user=ansible
+    ansible_port=22
