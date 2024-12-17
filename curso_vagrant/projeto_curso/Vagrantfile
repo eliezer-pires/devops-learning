@@ -1,0 +1,17 @@
+# Aqui é a versão.
+Vagrant.configure("2") do |config|
+  # Definindo a Box(OS) utilizada
+  config.vm.box = "ubuntu/jammy64"
+  # Definindo o Hostname
+  config.vm.hostname = "project1-jammy"
+  # Configurando a Rede como Bridge e definindo IP estático
+  config.vm.network "public_network", ip:"192.168.100.200"
+  # Sincronizando pasta do Host no Guest
+  config.vm.synced_folder "sync/", "/var/www"
+  # Definindo Provider e estabelecendo hostname, memória ram e cpu
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "project1"
+    vb.memory = "1024"
+    vb.cpus = 1
+  end
+end
