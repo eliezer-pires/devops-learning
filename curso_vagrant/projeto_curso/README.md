@@ -6,7 +6,7 @@ Este projeto é o primeiro projeto do curso do Iago Ferreira nele irei provision
 ## Instruções para Iniciar a VM
 Para que consiga utilizar este projeto é necessário ter instalado e configurado o Vagrant e algum virtualizador como virtualbox, vmware e etc. Todavia para teste foi utilizado o VirtualBox.
 
-[ ] Clone este repositório
+[ ] Clone este repositório.
 [ ] Dentro da pasta execute o comando: 
 ``` bash
 vagrant up
