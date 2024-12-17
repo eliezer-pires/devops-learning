@@ -6,12 +6,9 @@ Este projeto é o primeiro projeto do curso do Iago Ferreira nele irei provision
 ## Instruções para Iniciar a VM
 Para que consiga utilizar este projeto é necessário ter instalado e configurado o Vagrant e algum virtualizador como virtualbox, vmware e etc. Todavia para teste foi utilizado o VirtualBox.
 
-[ ] Clone este repositório.
-[ ] Dentro da pasta execute o comando: 
-``` bash
-vagrant up
-```
-[ ] Para acessar via SSH a VM: `vagrant ssh`
+- [ ] Clone este repositório.
+- [ ] Dentro da pasta execute o comando: `vagrant up`
+- [ ] Para acessar via SSH a VM: `vagrant ssh`
 
 A Sincronização de Pastas, temos a pasta sync no host nela temos que colocar os arquivos que queremos na VM ao coloca-los lá esses arquivos poderão ser encontrados dentro da VM no caminho especificado no "synced_folder" que no caso é o /var/www
 
