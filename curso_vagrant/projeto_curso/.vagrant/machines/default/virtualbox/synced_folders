@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www":{"guestpath":"/var/www","hostpath":"C:/Users/Eliezer Pires/Documents/12 - DevOps/devops-learning/curso_vagrant/projeto_curso/sync","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Eliezer Pires/Documents/12 - DevOps/devops-learning/curso_vagrant/projeto_curso","disabled":false,"__vagrantfile":true}}}
