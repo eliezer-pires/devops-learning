@@ -46,6 +46,12 @@ cat /etc/passwd | grep eliezerpires
 dpkg -l | grep -E "vim|curl|telnet|unzip|wget|net-tools|htop|nmap"
 ```
 
-## Link do repositório GitHub
+## Links
 
-https://github.com/eliezer-pires/devops-learning/tree/main/curso_vagrant/projeto_curso/vagrant-shell-script
+GitHub:
+
+https://github.com/eliezer-pires/
+
+Linkedin:
+
+https://www.linkedin.com/in/eliezer-pires-it-aws-cloud-sre-devops/
