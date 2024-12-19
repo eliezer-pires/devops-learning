@@ -11,3 +11,7 @@
 
 3. **Site Teste**
     - Utilizo uma API do Correios Brasileiro para testes do redirecionamento de porta do http.
+
+#### Implementação .gitignore
+
+Acrescentei os arquivos .gitignore para não subir a pasta .vagrant dos projetos.
