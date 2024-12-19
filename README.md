@@ -15,7 +15,8 @@ Este repositório contém meus laboratórios e exercícios de estudos em tecnolo
 ## Próximos Passos
 - [x] Executar o Vagrant para testar o provisionamento.
 - [x] Revisar e otimizar o arquivo `Vagrantfile`.
-- [ ] Desenvolver um script utilizando PowerShell.
+- [x] Desenvolver um script utilizando PowerShell.
+- [ ] Fazer todos os projetos do curso de Vagrant. (falta zabbix)
 - [ ] Continuar avançando no curso de Ansible.
 
 ---
