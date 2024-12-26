@@ -7,6 +7,7 @@ Neste projeto vamos provisionar uma VM utilizando o Vagrant iremos atualizar e i
 - Praticar o uso de Vagrant com provisionamento via shell script.
 - Automatizar a instalação do Nginx e a configuração de um servidor web.
 - Sincronizar pastas entre o host e a máquina virtual para hospedar o site.
+- Treinar Git para subir o projeto no GitHub.
 
 ## Instruções para Iniciar a VM
 Para que consiga utilizar este projeto é necessário ter instalado e configurado o Vagrant e algum virtualizador como virtualbox, vmware e etc. Todavia para teste foi utilizado o VirtualBox.
