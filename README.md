@@ -16,7 +16,7 @@ Este repositório contém meus laboratórios e exercícios de estudos em tecnolo
 - [x] Executar o Vagrant para testar o provisionamento.
 - [x] Revisar e otimizar o arquivo `Vagrantfile`.
 - [x] Desenvolver um script utilizando PowerShell.
-- [ ] Fazer todos os projetos do curso de Vagrant. (falta zabbix)
+- [x] Fazer todos os projetos do curso de Vagrant.
 - [ ] Continuar avançando no curso de Ansible.
 
 ---
